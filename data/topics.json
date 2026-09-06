@@ -1,0 +1,736 @@
+{
+  "exam": "GATE",
+  "year": 2027,
+  "branch": "CSE",
+  "subjects": [
+    {
+      "subjectId": "MATH",
+      "section": 1,
+      "name": "Engineering Mathematics",
+      "topics": [
+        {
+          "topicId": "MATH-DM",
+          "name": "Discrete Mathematics",
+          "subtopics": [
+            "Propositional Logic",
+            "First Order Logic",
+            "Sets",
+            "Relations",
+            "Functions",
+            "Partial Orders",
+            "Lattices",
+            "Monoids",
+            "Groups",
+            "Graph Connectivity",
+            "Graph Matching",
+            "Graph Colouring",
+            "Counting",
+            "Recurrence Relations",
+            "Generating Functions"
+          ],
+          "difficulty": 5,
+          "estimatedHours": 30
+        },
+        {
+          "topicId": "MATH-LA",
+          "name": "Linear Algebra",
+          "subtopics": [
+            "Matrices",
+            "Determinants",
+            "Systems of Linear Equations",
+            "Eigenvalues",
+            "Eigenvectors",
+            "LU Decomposition"
+          ],
+          "difficulty": 4,
+          "estimatedHours": 12
+        },
+        {
+          "topicId": "MATH-CALC",
+          "name": "Calculus",
+          "subtopics": [
+            "Limits",
+            "Continuity",
+            "Differentiability",
+            "Maxima and Minima",
+            "Mean Value Theorem",
+            "Integration"
+          ],
+          "difficulty": 4,
+          "estimatedHours": 12
+        },
+        {
+          "topicId": "MATH-PS",
+          "name": "Probability and Statistics",
+          "subtopics": [
+            "Random Variables",
+            "Uniform Distribution",
+            "Normal Distribution",
+            "Exponential Distribution",
+            "Poisson Distribution",
+            "Binomial Distribution",
+            "Mean",
+            "Median",
+            "Mode",
+            "Standard Deviation",
+            "Conditional Probability",
+            "Bayes Theorem"
+          ],
+          "difficulty": 5,
+          "estimatedHours": 24
+        }
+      ]
+    },
+    {
+      "subjectId": "DL",
+      "section": 2,
+      "name": "Digital Logic",
+      "topics": [
+        {
+          "topicId": "DL-BA",
+          "name": "Boolean Algebra and Minimization",
+          "subtopics": [
+            "Boolean Algebra",
+            "Algebraic Minimization",
+            "Karnaugh Map",
+            "Tabular Method"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 8
+        },
+        {
+          "topicId": "DL-CC",
+          "name": "Combinational Circuits",
+          "subtopics": [
+            "Design of Combinational Circuits"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "DL-SC",
+          "name": "Sequential Circuits",
+          "subtopics": [
+            "Design of Sequential Circuits"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "DL-NR",
+          "name": "Number Representation and Arithmetic",
+          "subtopics": [
+            "Fixed Point Representation",
+            "Floating Point Representation",
+            "Number Arithmetic"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        }
+      ]
+    },
+    {
+      "subjectId": "COA",
+      "section": 3,
+      "name": "Computer Organization and Architecture",
+      "topics": [
+        {
+          "topicId": "COA-ISA",
+          "name": "Instruction Set and Addressing Modes",
+          "subtopics": [
+            "Instruction Set",
+            "Addressing Modes"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "COA-ALU",
+          "name": "Arithmetic and Logic Unit",
+          "subtopics": [
+            "ALU Design"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "COA-CU",
+          "name": "Control Unit",
+          "subtopics": [
+            "Hardwired Control",
+            "Microprogrammed Control"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "COA-MEM",
+          "name": "Memory Interfacing and Hierarchy",
+          "subtopics": [
+            "Memory Interfacing",
+            "Memory Hierarchy",
+            "Memory Performance",
+            "Cache Memory",
+            "Cache Mapping"
+          ],
+          "difficulty": 4,
+          "estimatedHours": 10
+        },
+        {
+          "topicId": "COA-IO",
+          "name": "I/O Interface",
+          "subtopics": [
+            "I/O Interface",
+            "Interrupts",
+            "Direct Memory Access"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "COA-PIPE",
+          "name": "Instruction Pipelining",
+          "subtopics": [
+            "Instruction Pipelining",
+            "Pipeline Hazards"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        }
+      ]
+    },
+    {
+      "subjectId": "PDS",
+      "section": 4,
+      "name": "Programming and Data Structures",
+      "topics": [
+        {
+          "topicId": "PDS-C",
+          "name": "Programming in C",
+          "subtopics": [
+            "C Programming"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "PDS-REC",
+          "name": "Recursion",
+          "subtopics": [
+            "Recursion"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "PDS-ARRAY",
+          "name": "Arrays",
+          "subtopics": [
+            "Arrays"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "PDS-SQ",
+          "name": "Stacks and Queues",
+          "subtopics": [
+            "Stacks",
+            "Queues"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "PDS-LL",
+          "name": "Linked Lists",
+          "subtopics": [
+            "Linked Lists"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "PDS-TREE",
+          "name": "Trees",
+          "subtopics": [
+            "Trees",
+            "Binary Search Trees"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "PDS-HEAP",
+          "name": "Binary Heaps",
+          "subtopics": [
+            "Binary Heaps"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "PDS-GRAPH",
+          "name": "Graphs",
+          "subtopics": [
+            "Graph Data Structures"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        }
+      ]
+    },
+    {
+      "subjectId": "ALG",
+      "section": 5,
+      "name": "Algorithms",
+      "topics": [
+        {
+          "topicId": "ALG-SEARCH",
+          "name": "Searching",
+          "difficulty": 3,
+          "estimatedHours": 5,
+          "subtopics": [
+            "Searching Algorithms"
+          ]
+        },
+        {
+          "topicId": "ALG-SORT",
+          "name": "Sorting",
+          "difficulty": 3,
+          "estimatedHours": 6,
+          "subtopics": [
+            "Sorting Algorithms"
+          ]
+        },
+        {
+          "topicId": "ALG-HASH",
+          "name": "Hashing",
+          "difficulty": 3,
+          "estimatedHours": 4,
+          "subtopics": [
+            "Hashing"
+          ]
+        },
+        {
+          "topicId": "ALG-COMP",
+          "name": "Complexity Analysis",
+          "difficulty": 1,
+          "estimatedHours": 5,
+          "subtopics": [
+            "Asymptotic Time Complexity",
+            "Worst Case Time Complexity",
+            "Space Complexity"
+          ]
+        },
+        {
+          "topicId": "ALG-GREEDY",
+          "name": "Greedy Algorithms",
+          "difficulty": 2,
+          "estimatedHours": 4,
+          "subtopics": [
+            "Greedy Algorithm Design"
+          ]
+        },
+        {
+          "topicId": "ALG-DP",
+          "name": "Dynamic Programming",
+          "difficulty": 5,
+          "estimatedHours": 10,
+          "subtopics": [
+            "Dynamic Programming"
+          ]
+        },
+        {
+          "topicId": "ALG-DAC",
+          "name": "Divide and Conquer",
+          "difficulty": 3,
+          "estimatedHours": 6,
+          "subtopics": [
+            "Divide and Conquer"
+          ]
+        },
+        {
+          "topicId": "ALG-GRAPH",
+          "name": "Graph Algorithms",
+          "difficulty": 4,
+          "estimatedHours": 8,
+          "subtopics": [
+            "Graph Traversals",
+            "Minimum Spanning Trees",
+            "Shortest Paths"
+          ]
+        }
+      ]
+    },
+    {
+      "subjectId": "TOC",
+      "section": 6,
+      "name": "Theory of Computation",
+      "topics": [
+        {
+          "topicId": "TOC-RE",
+          "name": "Regular Expressions and Finite Automata",
+          "subtopics": [
+            "Regular Expressions",
+            "Finite Automata"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "TOC-CFG",
+          "name": "Context-Free Grammars and Pushdown Automata",
+          "subtopics": [
+            "Context-Free Grammars",
+            "Pushdown Automata"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "TOC-LANG",
+          "name": "Regular and Context-Free Languages",
+          "subtopics": [
+            "Regular Languages",
+            "Context-Free Languages",
+            "Pumping Lemma"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "TOC-TM",
+          "name": "Turing Machines and Undecidability",
+          "subtopics": [
+            "Turing Machines",
+            "Undecidability"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        }
+      ]
+    },
+    {
+      "subjectId": "CD",
+      "section": 7,
+      "name": "Compiler Design",
+      "topics": [
+        {
+          "topicId": "CD-LEX",
+          "name": "Lexical Analysis",
+          "subtopics": [
+            "Lexical Analysis"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-PARSE",
+          "name": "Parsing",
+          "subtopics": [
+            "Parsing"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-SDT",
+          "name": "Syntax-Directed Translation",
+          "subtopics": [
+            "Syntax-Directed Translation"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-RUNTIME",
+          "name": "Runtime Environments",
+          "subtopics": [
+            "Runtime Environments"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-ICG",
+          "name": "Intermediate Code Generation",
+          "subtopics": [
+            "Intermediate Code Generation"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-OPT",
+          "name": "Local Optimization",
+          "subtopics": [
+            "Local Optimization"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CD-DFA",
+          "name": "Data Flow Analysis",
+          "subtopics": [
+            "Constant Propagation",
+            "Liveness Analysis",
+            "Common Subexpression Elimination"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        }
+      ]
+    },
+    {
+      "subjectId": "OS",
+      "section": 8,
+      "name": "Operating Systems",
+      "topics": [
+        {
+          "topicId": "OS-SYSCALL",
+          "name": "System Calls",
+          "subtopics": [
+            "System Calls"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "OS-PROC",
+          "name": "Processes",
+          "subtopics": [
+            "Processes"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "OS-THREAD",
+          "name": "Threads",
+          "subtopics": [
+            "Threads"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "OS-IPC",
+          "name": "Inter-Process Communication",
+          "subtopics": [
+            "Inter-Process Communication"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "OS-SYNC",
+          "name": "Concurrency and Synchronization",
+          "subtopics": [
+            "Concurrency",
+            "Synchronization"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "OS-DEAD",
+          "name": "Deadlock",
+          "subtopics": [
+            "Deadlock"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "OS-SCHED",
+          "name": "CPU and I/O Scheduling",
+          "subtopics": [
+            "CPU Scheduling",
+            "I/O Scheduling"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "OS-MEM",
+          "name": "Memory Management and Virtual Memory",
+          "subtopics": [
+            "Memory Management",
+            "Virtual Memory"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "OS-FS",
+          "name": "File Systems",
+          "subtopics": [
+            "File Systems"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        }
+      ]
+    },
+    {
+      "subjectId": "DB",
+      "section": 9,
+      "name": "Databases",
+      "topics": [
+        {
+          "topicId": "DB-ER",
+          "name": "ER Model",
+          "subtopics": [
+            "Entity Relationship Model"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "DB-REL",
+          "name": "Relational Model",
+          "subtopics": [
+            "Relational Algebra",
+            "Tuple Calculus",
+            "SQL"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "DB-CONSTRAINT",
+          "name": "Integrity Constraints",
+          "subtopics": [
+            "Integrity Constraints"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "DB-NF",
+          "name": "Normal Forms",
+          "subtopics": [
+            "Database Normalization",
+            "Normal Forms"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "DB-FILE",
+          "name": "File Organization",
+          "subtopics": [
+            "File Organization"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "DB-INDEX",
+          "name": "Indexing",
+          "subtopics": [
+            "Indexing",
+            "B Trees",
+            "B+ Trees"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "DB-TRANS",
+          "name": "Transactions and Concurrency Control",
+          "subtopics": [
+            "Transactions",
+            "Concurrency Control"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        }
+      ]
+    },
+    {
+      "subjectId": "CN",
+      "section": 10,
+      "name": "Computer Networks",
+      "topics": [
+        {
+          "topicId": "CN-LAYER",
+          "name": "Principles of Layering",
+          "subtopics": [
+            "Layering Principles"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 3
+        },
+        {
+          "topicId": "CN-SWITCH",
+          "name": "Switching",
+          "subtopics": [
+            "Circuit Switching",
+            "Packet Switching",
+            "Virtual Circuit Switching",
+            "Performance Metrics"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 8
+        },
+        {
+          "topicId": "CN-DL",
+          "name": "Data Link Layer",
+          "subtopics": [
+            "Error Detection",
+            "Medium Access Control",
+            "Ethernet"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "CN-ROUTING",
+          "name": "Routing",
+          "subtopics": [
+            "Distance Vector Routing",
+            "Link State Routing"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        },
+        {
+          "topicId": "CN-IP",
+          "name": "IPv4",
+          "subtopics": [
+            "IPv4",
+            "Fragmentation",
+            "CIDR Notation",
+            "Network Address Translation"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 8
+        },
+        {
+          "topicId": "CN-TCP",
+          "name": "TCP",
+          "subtopics": [
+            "TCP Flow Control",
+            "TCP Congestion Control",
+            "Socket API"
+          ],
+          "difficulty": 3,
+          "estimatedHours": 6
+        },
+        {
+          "topicId": "CN-APP",
+          "name": "Application Layer",
+          "subtopics": [
+            "DNS",
+            "HTTP"
+          ],
+          "difficulty": 2,
+          "estimatedHours": 4
+        }
+      ]
+    }
+  ]
+}
