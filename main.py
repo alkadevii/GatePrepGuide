@@ -5,9 +5,20 @@ from algorithms.priority_calculator import calculate_priority
 from algorithms.time_allocator import allocate_hours
 from datetime import datetime
 from algorithms.schedule_generator import generate_schedule
+from algorithms.study_time_planner import divide_study_time
 
 # Get student study details
 study_details = get_study_details()
+
+study_time = divide_study_time(
+    study_details["total_hours"]
+)
+
+print("\nSTUDY TIME DISTRIBUTION")
+print("-" * 40)
+print(f"Learning Hours: {study_time['learning_hours']}")
+print(f"Revision Hours: {study_time['revision_hours']}")
+print(f"Mock Test / Buffer Hours: {study_time['mock_test_hours']}")
 
 print("\nSTUDY DETAILS")
 print("-" * 40)
@@ -48,7 +59,7 @@ topics_with_priority.sort(
 
 allocated_topics = allocate_hours(
     topics_with_priority,
-    study_details["total_hours"]
+    study_time["learning_hours"]
 )
 
 
@@ -85,15 +96,25 @@ total_allocated = sum(
 )
 
 print("=" * 60)
-print(f"Total Available Hours: {study_details['total_hours']}")
-print(f"Total Allocated Hours: {round(total_allocated, 2)}")
+print(
+    f"Learning Hours Available: "
+    f"{study_time['learning_hours']}"
+)
 
-remaining = (
-    study_details["total_hours"]
+print(
+    f"Learning Hours Allocated: "
+    f"{round(total_allocated, 2)}"
+)
+
+remaining_learning_hours = (
+    study_time["learning_hours"]
     - total_allocated
 )
 
-print(f"Remaining Hours: {round(remaining, 2)}")
+print(
+    f"Remaining Learning Hours: "
+    f"{round(remaining_learning_hours, 2)}"
+)
 
 # Group allocated hours by subject
 
@@ -128,8 +149,8 @@ print("-" * 60)
 for subject, hours in subject_hours.items():
 
     percentage = (
-        hours / study_details["total_hours"]
-    ) * 100
+    hours / study_time["learning_hours"]
+) * 100
 
     print(
         f"{subject}: "
@@ -154,20 +175,22 @@ schedule = generate_schedule(
     allocated_topics,
     start_date,
     exam_date,
-    study_details["hours_per_day"]
+    study_details["hours_per_day"],
+    study_time
 )
 
 print("\nDAY-BY-DAY STUDY SCHEDULE")
-print("=" * 50)
+print("=" * 60)
 
 for day in schedule:
 
     print(f"\n📅 {day['date']}")
 
-    for item in day["topics"]:
+    for task in day["tasks"]:
 
         print(
-            f"  [{item['subject']}] "
-            f"{item['topic']} "
-            f"→ {item['hours']} hours"
+            f"  [{task['type']}] "
+            f"{task['subject']} → "
+            f"{task['topic']} "
+            f"({task['hours']} hours)"
         )
