@@ -1,12 +1,13 @@
 from datetime import timedelta
 from algorithms.revision_scheduler import add_revision_schedule
 
+
 def generate_schedule(
-allocated_topics,
-start_date,
-exam_date,
-hours_per_day,
-study_time
+    allocated_topics,
+    start_date,
+    exam_date,
+    hours_per_day,
+    study_time
 ):
     schedule = []
     current_date = start_date
@@ -101,7 +102,15 @@ study_time
             and remaining_daily_hours > 0
         ):
 
-            # Select the first due revision
+            # Sort by revision date first,
+            # then higher priority first
+            due_revisions.sort(
+                key=lambda revision: (
+                    revision["revision_date"],
+                    -revision["priority"]
+                )
+            )
+
             revision = due_revisions[0]
 
             revision_hours = min(
@@ -162,36 +171,36 @@ study_time
             selected_topic["remaining_hours"] -= study_hours
             remaining_daily_hours -= study_hours
 
-            # ---------------------------------
-            # Schedule spaced revisions only ONCE
-            # for each topic
-            # ---------------------------------
-
-            topic_key = (
-                selected_topic["subject"],
-                selected_topic["name"]
-            )
-
-            if (
-                topic_key
-                not in topics_with_revision_schedule
-            ):
-
-                add_revision_schedule(
-                    revision_queue,
-                    selected_topic["subject"],
-                    selected_topic["name"],
-                    current_date
-                )
-
-                topics_with_revision_schedule.add(
-                    topic_key
-                )
-
             last_subject = selected_topic["subject"]
 
-            # Remove completed topic
+            # =================================
+            # STEP 20
+            # Schedule revision ONLY after
+            # topic is completely learned
+            # =================================
+
             if selected_topic["remaining_hours"] <= 0:
+
+                topic_key = (
+                    selected_topic["subject"],
+                    selected_topic["name"]
+                )
+
+                if topic_key not in topics_with_revision_schedule:
+
+                    add_revision_schedule(
+                        revision_queue,
+                        selected_topic["subject"],
+                        selected_topic["name"],
+                        selected_topic["priority"],
+                        current_date
+                    )
+
+                    topics_with_revision_schedule.add(
+                        topic_key
+                    )
+
+                # Remove completed topic
                 topics.remove(selected_topic)
 
         # =================================
@@ -209,6 +218,10 @@ study_time
                     2
                 )
             })
+
+        # ---------------------------------
+        # Save day's schedule
+        # ---------------------------------
 
         schedule.append({
             "date": current_date.strftime(

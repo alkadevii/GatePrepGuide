@@ -8,6 +8,7 @@ def add_revision_schedule(
     revision_queue,
     subject,
     topic,
+    priority,
     current_date
 ):
 
@@ -21,6 +22,7 @@ def add_revision_schedule(
         revision_queue.append({
             "subject": subject,
             "topic": topic,
+            "priority": priority,
             "revision_number": revision_number,
             "revision_date": revision_date
         })

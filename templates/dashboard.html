@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GATE Prep Guide</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">G</div>
+
+            <div>
+                <h2>GatePrep</h2>
+                <span>Guide</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a class="active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a>
+                <span>◷</span>
+                Schedule
+            </a>
+
+            <a>
+                <span>✓</span>
+                Topics
+            </a>
+
+            <a>
+                <span>↻</span>
+                Revisions
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="exam-card">
+
+                <span>GATE 2027</span>
+
+                <strong>
+                    Preparation Mode
+                </strong>
+
+                <p>
+                    Stay consistent. Keep learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Good morning 👋</h1>
+
+                <p>
+                    Here's your GATE preparation overview.
+                </p>
+            </div>
+
+            <div class="date">
+                {{ plan.study_details.start_date }}
+            </div>
+
+        </header>
+
+
+        <!-- ========================= -->
+        <!-- SUMMARY CARDS -->
+        <!-- ========================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📅
+                </div>
+
+                <div>
+                    <span>Available Days</span>
+
+                    <strong>
+                        {{ plan.study_details.available_days }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ⏱
+                </div>
+
+                <div>
+                    <span>Total Study Hours</span>
+
+                    <strong>
+                        {{ plan.study_details.total_hours }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    📖
+                </div>
+
+                <div>
+                    <span>Learning</span>
+
+                    <strong>
+                        {{ plan.study_time.learning_hours }} hrs
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ↻
+                </div>
+
+                <div>
+                    <span>Revision</span>
+
+                    <strong>
+                        {{ plan.study_time.revision_hours }} hrs
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- CONTENT GRID -->
+        <!-- ========================= -->
+
+        <section class="content-grid">
+
+
+            <!-- SUBJECT ALLOCATION -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Subject Allocation</h2>
+
+                        <p>
+                            Your learning hours by subject
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="subjects">
+
+                    {% for subject, hours in
+                       plan.subject_hours.items() %}
+
+                    {% set percentage =
+                       (hours / plan.study_time.learning_hours * 100)
+                    %}
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                {{ subject }}
+                            </span>
+
+                            <strong>
+                                {{ "%.1f"|format(hours) }} hrs
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                style="width:
+                                {{ percentage }}%,"
+                            ></div>
+
+                        </div>
+
+                        <small>
+                            {{ "%.1f"|format(percentage) }}%
+                        </small>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+
+            <!-- TODAY -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>Today's Plan</h2>
+
+                        <p>
+                            Your next study tasks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                {% if plan.schedule %}
+
+                {% for task in plan.schedule[0].tasks %}
+
+                <div class="task">
+
+                    <div class="task-icon">
+
+                        {% if task.type == "Learning" %}
+                            📖
+                        {% elif "Revision" in task.type %}
+                            ↻
+                        {% elif task.type == "Mock Test" %}
+                            📝
+                        {% else %}
+                            ◷
+                        {% endif %}
+
+                    </div>
+
+                    <div class="task-content">
+
+                        <strong>
+                            {{ task.topic }}
+                        </strong>
+
+                        <span>
+                            {{ task.type }}
+                            ·
+                            {{ task.hours }} hr
+                        </span>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- TOP PRIORITY TOPICS -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Priority Topics</h2>
+
+                    <p>
+                        Topics receiving the highest study priority
+                    </p>
+
+                </div>
+
+                <span class="badge">
+                    {{ plan.topics|length }} topics
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Topic</th>
+                            <th>Subject</th>
+                            <th>Priority</th>
+                            <th>Allocated</th>
+                            <th>Difficulty</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for topic in plan.topics[:10] %}
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    {{ topic.name }}
+                                </strong>
+                            </td>
+
+                            <td>
+                                {{ topic.subject }}
+                            </td>
+
+                            <td>
+
+                                <span class="priority">
+                                    {{ topic.priority }}
+                                </span>
+
+                            </td>
+
+                            <td>
+                                {{ topic.allocated_hours }} hrs
+                            </td>
+
+                            <td>
+
+                                <div class="difficulty">
+
+                                    {% for i in range(topic.difficulty) %}
+                                        <span></span>
+                                    {% endfor %}
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- UPCOMING SCHEDULE -->
+        <!-- ========================= -->
+
+        <section class="card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Study Schedule</h2>
+
+                    <p>
+                        Day-by-day preparation plan
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="schedule-list">
+
+                {% for day in plan.schedule[:7] %}
+
+                <div class="schedule-day">
+
+                    <div class="day-date">
+
+                        <strong>
+                            {{ day.date }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="day-tasks">
+
+                        {% for task in day.tasks %}
+
+                        <div class="schedule-task">
+
+                            <span class="task-type">
+                                {{ task.type }}
+                            </span>
+
+                            <span>
+                                {{ task.subject }}
+                                →
+                                {{ task.topic }}
+                            </span>
+
+                            <strong>
+                                {{ task.hours }}h
+                            </strong>
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
